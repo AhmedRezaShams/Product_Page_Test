@@ -295,7 +295,7 @@
           <div class="benefits-list">
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" loading="lazy" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" loading="lazy" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="durable-leather-is">
                 Durable leather is easily cleanable so you can keep your look
@@ -304,7 +304,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="water-repellent-finish-and">
                 Water-repellent finish and internal membrane help keep your
@@ -313,7 +313,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="toe-piece-with">
                 Toe piece with star pattern adds durability.
@@ -321,7 +321,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="synthetic-insulation-helps">
                 Synthetic insulation helps keep you warm.
@@ -329,7 +329,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="originally-designed-for">
                 Originally designed for performance hoops, the Air unit
@@ -338,7 +338,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="plush-tongue-wraps">
                 Plush tongue wraps over the ankle to help keep out the
@@ -347,7 +347,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="rubber-outsole-with">
                 Rubber outsole with aggressive traction pattern adds durable
@@ -356,7 +356,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="durable-leather-is">
                 Durable leather is easily cleanable so you can keep your look
@@ -370,7 +370,7 @@
           <div class="benefits-list">
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="not-intended-for">
                 Not intended for use as Personal Protective Equipment (PPE)
@@ -378,7 +378,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="water-repellent-finish-and">
                 Water-repellent finish and internal membrane help keep your
@@ -392,7 +392,7 @@
           <div class="benefits-list">
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="lunarlon-midsole-delivers">
                 Lunarlon midsole delivers ultra-plush responsiveness
@@ -400,7 +400,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="encapsulated-air-sole-heel">
                 Encapsulated Air-Sole heel unit for lightweight cushioning
@@ -408,7 +408,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="colour-shown-ale">
                 Colour Shown: Ale Brown/Black/Goldtone/Ale Brown
@@ -416,7 +416,7 @@
             </div>
             <div class="benefit-items">
               <div class="check-icon-wrapper">
-                <img class="check-icon" alt="" src="./public/check-icon.svg" />
+                <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
               <div class="style-805899-202">Style: 805899-202</div>
             </div>
