@@ -142,13 +142,13 @@
   .sideboard {
     flex: 1;
     font-weight: 600;
-    color: #3a4980;
+    color: #3A4980;
     min-width: 2.938rem;
   }
   .home-parent {
-    width: 30.938rem;
+    width: 33rem;
     border-radius: 8px;
-    background-color: #edf0f8;
+    background-color: #EDF0F8;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -161,9 +161,10 @@
     color: #a3a9c2;
   }
   .embrace-sideboard {
+ 
     margin: 0;
     position: relative;
-    font-size: inherit;
+    font-size: 28;
     font-weight: 600;
     font-family: inherit;
   }
@@ -173,6 +174,8 @@
     color: #b9bbbf;
   }
   .product-title {
+    height: 64px;
+    width: 582px;
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -439,6 +442,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    
     padding: 0.062rem 0 0;
   }
   .small {
@@ -1107,8 +1111,8 @@
   }
   
   .carousel-thumbnails .thumbnail {
-    width: 100px;
-    height: 60px;
+    width: 115px;
+    height: 115px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -1122,8 +1126,8 @@
   }
   
   .color-swatch {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -1135,18 +1139,32 @@
     position: absolute;
     top: -5px;
     left: -5px;
-    width: 50px;
-    height: 50px;
-    border: 2px solid black; /* Adjust the stroke color */
+    width: 60px;
+    height: 60px;
+    border: 2px solid currentColor; /* Border color matches the background */
     border-radius: 50%;
+    
     pointer-events: none;
   }
+  .color-swatch.selected::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px; /* Width of the tick */
+    height: 24px;  /* Height of the tick */
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+}
   .size-radio{
     
     height: 16px;
     width: 16px;
     vertical-align: middle;
-    background-color: #3A4980;
+    color: #3A4980;
+    /* background-color: #3A4980; */
     margin-top: -0.5px;
   }
   .decrement-button {

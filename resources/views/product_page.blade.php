@@ -26,20 +26,12 @@
         </div>
         <div class="right-column">
         <a href="?showModal=true">
-          <div class="rectangle-parent" id="openModal" style="cursor: pointer;">
+          <div class="rectangle-parent"  style="cursor: pointer;">
             <div class="frame-child"></div>
             <img class="image-icon" loading="lazy" alt="" src="{{ asset('assets/image/frame.svg') }}" />
           </div>
           </a>
-          @if(request()->get('showModal'))
-        <div class="modal show">
-            <div class="modal-content">
-                <h2>Modal Title</h2>
-                <p>This is your modal content.</p>
-                <a href="{{ url()->current() }}">Close</a>
-            </div>
-        </div>
-    @endif
+          
 
           <!-- <div class="wrapper">
             <img class="icon" loading="lazy" alt="" src="{{ asset('assets/image/3.svg') }}" />
@@ -155,7 +147,8 @@
                   <div class="color-swatch" style="background-color: #BBD278;"></div>
                   <div class="color-swatch" style="background-color: #BBC1F8;"></div>
                   <div class="color-swatch" style="background-color: #FFD3F8;"></div>
-                  <div class="color-swatch" style="background-color: #FFD3F8;"></div>
+                  <div class="color-swatch" style="background-color: #FFD3F8; border-radius: 50%;
+    background: linear-gradient(to bottom,#FFD3F8 50% , #BBD278 50%);"></div>
                 </div>
 
                 <div class="rectangle-div"></div>
@@ -204,25 +197,25 @@
                 </button>
                 <button class="small-size">
                   <div class="small-size-inner">
-                    <input type="radio" name="size" value="small" class="size-radio">
+                    <input type="radio" name="size" value="medium" class="size-radio">
                   </div>
                   <div class="small">Medium</div>
                 </button>
                 <button class="small-size">
                   <div class="small-size-inner">
-                    <input type="radio" name="size" value="small" class="size-radio">
+                    <input type="radio" name="size" value="large" class="size-radio">
                   </div>
                   <div class="small">Large</div>
                 </button>
                 <button class="small-size">
                   <div class="small-size-inner">
-                    <input type="radio" name="size" value="small" class="size-radio">
+                    <input type="radio" name="size" value="extra large" class="size-radio">
                   </div>
                   <div class="small">Extra large</div>
                 </button>
                 <button class="small-size">
                   <div class="small-size-inner">
-                    <input type="radio" name="size" value="small" class="size-radio">
+                    <input type="radio" name="size" value="xxl" class="size-radio">
                   </div>
                   <div class="small">XXL</div>
                 </button>
