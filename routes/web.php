@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ModalsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,4 @@ Route::get('/', function () {
 Route::get('test', function () {
     return view('welcome');
 });
-Route::get('/show-modal', function () {
-    return view('modal/cart'); // Name of the Blade file where your modal is defined
-})->name('show.modal');
+Route::get('/show-modal',[ModalsController::class, 'showModal'])->name('show-modal');

@@ -60,10 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // This could be based on user actions, selections, etc.
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const openModal = document.getElementById('openModal');
-  openModal.addEventListener('click', function () {
-      const myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
-      myModal.show();
+$(document).ready(function () {
+  $('.btn').on('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      $('#modal').modal('show'); // Show the modal
   });
 });
