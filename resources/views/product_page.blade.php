@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <link rel="stylesheet" href="{{ asset('assets/css/product.css') }}">
   <!-- <script src="{{ asset('assets/js/product_page.js') }}"></script> -->
@@ -14,6 +17,7 @@
 </head>
 
 <body>
+  
   <div class="product-page">
     <section class="columns-parent">
       <header class="columns">
@@ -21,13 +25,25 @@
           <a class="fashionhub">FashionHub</a>
         </div>
         <div class="right-column">
-          <div class="rectangle-parent">
+        <a href="?showModal=true">
+          <div class="rectangle-parent" id="openModal" style="cursor: pointer;">
             <div class="frame-child"></div>
             <img class="image-icon" loading="lazy" alt="" src="{{ asset('assets/image/frame.svg') }}" />
           </div>
-          <div class="wrapper">
+          </a>
+          @if(request()->get('showModal'))
+        <div class="modal show">
+            <div class="modal-content">
+                <h2>Modal Title</h2>
+                <p>This is your modal content.</p>
+                <a href="{{ url()->current() }}">Close</a>
+            </div>
+        </div>
+    @endif
+
+          <!-- <div class="wrapper">
             <img class="icon" loading="lazy" alt="" src="{{ asset('assets/image/3.svg') }}" />
-          </div>
+          </div> -->
         </div>
       </header>
       <div class="carousel-navigation">
@@ -215,7 +231,7 @@
             </div>
             <div class="frame-inner"></div>
             <div class="content">
-             
+
               <div class="rectangle-parent4">
                 <div class="frame-child15">
                   <!-- Optional: Add styling or content for this element -->
@@ -228,11 +244,11 @@
                   <button class="increment-button"><b class="b">+</b></button>
                 </div>
               </div>
-              
 
-              <div class="rectangle-parent5">
+
+              <div class="rectangle-parent5" id="add-to-cart-button">
                 <div class="frame-child16"></div>
-                <div class="cart-label">$268.35</div>
+                <div class="cart-label" id="price-label">$268.35</div>
                 <div class="add-button">
                   <div class="add-to-cart">Add To Cart</div>
                 </div>
@@ -416,7 +432,7 @@
       </div>
     </section>
   </div>
-  
+
   <script src="{{ asset('assets/js/product_page.js') }}"></script>
 </body>
 

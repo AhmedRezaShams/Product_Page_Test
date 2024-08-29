@@ -3,7 +3,7 @@
     position: relative;
     font-style: italic;
     font-weight: 800;
-    color: inherit;
+    color: #0D3356;
   }
   .fashionhub-wrapper {
     display: flex;
@@ -616,6 +616,7 @@
   .add-button,
   .content,
   .rectangle-parent5 {
+    cursor: pointer;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -1148,3 +1149,15 @@
     background-color: #3A4980;
     margin-top: -0.5px;
   }
+  .decrement-button {
+    border: none;
+    background: none; /* This will also remove any background color */
+    outline: none; /* This will remove the default focus outline */
+    cursor: pointer; /* This will ensure the cursor changes to a pointer */
+}
+.increment-button {
+  border: none;
+  background: none; /* This will also remove any background color */
+  outline: none; /* This will remove the default focus outline */
+  cursor: pointer; /* This will ensure the cursor changes to a pointer */
+}

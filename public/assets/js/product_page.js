@@ -36,3 +36,34 @@ function updateQuantity(amount) {
 // Event listeners for buttons
 decrementButton.addEventListener('click', () => updateQuantity(-1));
 incrementButton.addEventListener('click', () => updateQuantity(1));
+document.addEventListener('DOMContentLoaded', () => {
+  // Reference to the price label and add to cart button
+  const priceLabel = document.getElementById('price-label');
+  const addToCartButton = document.getElementById('add-to-cart-button');
+
+  // Initial price
+  let price = 268.35;
+
+  // Function to update the price
+  function updatePrice(newPrice) {
+      price = newPrice;
+      priceLabel.textContent = `$${price.toFixed(2)}`;
+  }
+
+  // Event listener for the button to change the price dynamically
+  addToCartButton.addEventListener('click', () => {
+      // Example: Increase price by $10 on each click
+      updatePrice(price + 10);
+  });
+
+  // Optional: Additional logic to dynamically change the price
+  // This could be based on user actions, selections, etc.
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const openModal = document.getElementById('openModal');
+  openModal.addEventListener('click', function () {
+      const myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+      myModal.show();
+  });
+});
