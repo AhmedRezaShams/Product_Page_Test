@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ModalsController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('product_page');
-});
+// Route::get('/', function () {
+//     return view('product_page');
+// });
 Route::get('test', function () {
     return view('welcome');
 });
-Route::get('/show-modal',[ModalsController::class, 'showModal'])->name('show-modal');
+
+
+Route::get('/', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');

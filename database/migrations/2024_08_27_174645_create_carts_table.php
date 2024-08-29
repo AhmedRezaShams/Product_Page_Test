@@ -15,14 +15,20 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
-            $table->integer('quantity');
-            $table->string('color');
-            $table->string('size');
-            $table->decimal('price', 10, 2);
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->string('color')->nullable();
+            $table->string('size')->nullable();
+            $table->decimal('price', 10, 2)->nullable();
+            $table->foreign('product_id')
+                  ->references('id')
+                  ->on('products')
+                  ->onDelete('restrict') // Manually enforce restrict behavior
+                  ->cascadeOnUpdate();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
