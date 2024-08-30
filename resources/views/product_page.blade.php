@@ -30,7 +30,7 @@
         <div class="fashionhub-wrapper">
           <a class="fashionhub">FashionHub</a>
         </div>
-        <div class="right-column" data-bs-toggle="modal" data-bs-target="#Modal">
+        <div class="right-column" data-bs-toggle="modal" data-bs-target="#Product_modal">
 
           <div class="rectangle-parent" style="cursor: pointer;">
             <div class="frame-child"></div>
@@ -452,14 +452,21 @@
       </div>
     </div>
   </div> -->
-  <div class="modal" id="Modal" >
-          <section class="product-image-parent">
-            <img class="product-image-icon" loading="lazy" alt="" src="./public/rectangle-41@2x.png" />
+  <div class="modal fade" id="Product_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class=" modal-dialog modal-xl row d-flex justify-content-center" style="z-index: 20">
+      <div class="modal-content col-sm-12 col-md-12 col-lg-8" style="margin-top: 150px; margin-left: 150px; z-index: 20">
+        
+        <div class="modal-body">
+        <section class="product-image-parent">
+            <img class="product-image-icon" loading="lazy" alt="" src="{{ asset('assets/image/R6.svg') }}" />
 
             <div class="product-info">
               <div class="info-details">
+                
                 <div class="x-wrapper">
-                  <img class="x-icon" loading="lazy" alt="" src="./public/x.svg" />
+                <button   data-bs-dismiss="modal" aria-label="Close"> 
+                  <img class="x-icon" loading="lazy" alt="" src="{{ asset('assets/image/X.svg') }}" />
+                  </button>
                 </div>
                 <h3 class="embrace-sideboard1">Embrace Sideboard</h3>
                 <div class="designer-info">
@@ -481,7 +488,7 @@
                     </div>
                     <div class="rectangle-parent4">
                       <div class="frame-child15">
-                        <!-- Optional: Add styling or content for this element -->
+                      
                       </div>
                       <div class="input-wrapper">
                         <button class="decrement-button"><b class="input">-</b></button>
@@ -516,6 +523,79 @@
             </div>
           </section>
         </div>
+        
+       
+      </div>
+    </div>
+  </div>
+  <!-- <div class="modal" id="Modal" >
+          <section class="product-image-parent">
+            <img class="product-image-icon" loading="lazy" alt="" src="{{ asset('assets/image/R6.svg') }}" />
+
+            <div class="product-info">
+              <div class="info-details">
+                
+                <div class="x-wrapper">
+                <button  class="x-icon" data-bs-dismiss="modal">
+                  <img class="x-icon" loading="lazy" alt="" src="{{ asset('assets/image/X.svg') }}" />
+                  </button>
+                </div>
+                <h3 class="embrace-sideboard1">Embrace Sideboard</h3>
+                <div class="designer-info">
+                  <div class="designer-details">
+                    <div class="studio-details">
+                      <div class="studio-name">
+                        <a class="teixeira-design-studio1">Teixeira Design Studio</a>
+                        <div class="size-info">
+                          <div class="size-details">
+                            <div class="size-icon"></div>
+                            <div class="size-details-inner">
+                              <div class="medium-wrapper">
+                                <a class="medium">Medium</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rectangle-parent4">
+                      <div class="frame-child15">
+                    
+                      </div>
+                      <div class="input-wrapper">
+                        <button class="decrement-button"><b class="input">-</b></button>
+                      </div>
+                      <b class="quantity-label">3</b>
+                      <div class="small-size-inner">
+                        <button class="increment-button"><b class="b">+</b></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="actions">
+            <div class="buttons">
+              <div class="rectangle-parent5" id="add-to-cart-button">
+                <div class="frame-child16"></div>
+                <div class="cart-label" id="price-label">$268.35</div>
+                <div class="add-button">
+                  <div class="add-to-cart">Add To Cart</div>
+                </div>
+              </div>
+              <div class="secondary-button">
+                <div class="button-icon-parent">
+                  <div class="button-icon">$357.8</div>
+                  <div class="buy-now-container">
+                    <div class="buy-now1">Buy Now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div> -->
+        <script src="{{ asset('assets/js/product_page.js') }}"></script>
 <script>
               function updateProductDetails(image, name, description, price, subtitle) {
                 // Update large image

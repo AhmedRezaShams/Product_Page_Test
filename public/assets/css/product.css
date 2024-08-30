@@ -1,6 +1,9 @@
 .fashionhub {
     text-decoration: none;
+    height: 40px;
+    width: 195px;
     position: relative;
+    font-size: 32.8px;
     font-style: italic;
     font-weight: 800;
     color: #0D3356;
@@ -1096,16 +1099,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 843px;
+    width: 587px;
+    
   }
+  
   
   .carousel-large img {
     width: 587px;
     height: 691px;
+    border-radius: 17px;
     object-fit: cover;
     margin-bottom: 20px;
   }
   
   .carousel-thumbnails {
+    width: 520px;
+    height: 115px;
     display: flex;
     gap: 10px;
   }
@@ -1482,7 +1492,20 @@
 }
 .actions,
 .buttons,
-.modal {
+.modal-body {
+  display: none;
+  width: 619px;
+  height: 366px;
+
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.437rem 0.312rem 0;
+  gap: 4.187rem;
+  line-height: normal;
+  letter-spacing: normal;
+  background-color: #FFFFFF;
   max-width: 100%;
   display: flex;
 }
@@ -1494,8 +1517,9 @@
   gap: 1.556rem;
 }
 .actions,
-.modal {
+.modal-body {
   box-sizing: border-box;
+  background-color: #FFFFFF;
 }
 .actions {
   width: 36.188rem;
@@ -1510,8 +1534,8 @@
 }
 .modal {
   display: none;
-  width: 38.688rem;
-  background-color: #fff;
+  width: 100%;
+  background-color: transparent;
   overflow: hidden;
   flex-direction: column;
   align-items: flex-end;
@@ -1521,6 +1545,20 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
+/* .modal {
+  display: none;
+  width: 38.688rem;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.437rem 0.312rem 0;
+  gap: 4.187rem;
+  line-height: normal;
+  letter-spacing: normal;
+} */
 @media screen and (max-width: 600px) {
   .modal {
     gap: 2.063rem;
@@ -1697,4 +1735,21 @@ cursor: pointer; /* This will ensure the cursor changes to a pointer */
 }
 .add-to-cart {
   font-size: 1rem;
+}
+button[data-bs-dismiss="modal"] {
+  background: none;       /* Remove the default background */
+  border: none;           /* Remove the border */
+  padding: 0;             /* Remove padding */
+  cursor: pointer;        /* Change cursor to pointer to indicate it's clickable */
+}
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 1rem); /* Ensures the modal is centered even if the content is small */
+}
+
+.modal-content {
+  align-items: center;
+  background-color: transparent;
 }
