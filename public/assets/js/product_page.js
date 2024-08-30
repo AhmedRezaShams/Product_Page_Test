@@ -1,22 +1,21 @@
 function changeImage(src) {
-    document.getElementById('largeImage').src = src;
-  }
+  document.getElementById('largeImage').src = src;
+}
 
- 
-  // Assuming you have the color swatches with the class 'color-swatch'
-  const colorSwatches = document.querySelectorAll('.color-swatch');
+// Assuming you have the color swatches with the class 'color-swatch'
+const colorSwatches = document.querySelectorAll('.color-swatch');
 
-  colorSwatches.forEach(swatch => {
-      swatch.addEventListener('click', function () {
-          // Remove 'selected' class from all swatches
-          colorSwatches.forEach(s => s.classList.remove('selected'));
-
-          // Add 'selected' class to the clicked swatch
-          this.classList.add('selected');
-      });
+colorSwatches.forEach(swatch => {
+  swatch.addEventListener('click', function () {
+      // Remove 'selected' class from all swatches
+      colorSwatches.forEach(s => s.classList.remove('selected'));
+      
+      // Add 'selected' class to the clicked swatch
+      this.classList.add('selected');
   });
+});
 
-  // Get references to the elements
+// Get references to the elements
 const decrementButton = document.querySelector('.decrement-button');
 const incrementButton = document.querySelector('.increment-button');
 const quantityLabel = document.querySelector('.quantity-label');
@@ -28,7 +27,7 @@ let quantity = parseInt(quantityLabel.textContent, 10);
 function updateQuantity(amount) {
   quantity += amount;
   if (quantity < 0) {
-    quantity = 0; // Prevent quantity from going below 0
+      quantity = 0; // Prevent quantity from going below 0
   }
   quantityLabel.textContent = quantity;
 }
@@ -36,6 +35,7 @@ function updateQuantity(amount) {
 // Event listeners for buttons
 decrementButton.addEventListener('click', () => updateQuantity(-1));
 incrementButton.addEventListener('click', () => updateQuantity(1));
+
 document.addEventListener('DOMContentLoaded', () => {
   // Reference to the price label and add to cart button
   const priceLabel = document.getElementById('price-label');
@@ -56,8 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePrice(price + 10);
   });
 
-  // Optional: Additional logic to dynamically change the price
-  // This could be based on user actions, selections, etc.
+  // Event listener for quantity change
+  quantityLabel.addEventListener('DOMSubtreeModified', function() {
+      // Calculate new price based on quantity
+      const newPrice = 268.35 * quantity;
+      updatePrice(newPrice);
+  });
 });
 
 $(document).ready(function () {
@@ -66,6 +70,3 @@ $(document).ready(function () {
       $('#modal').modal('show'); // Show the modal
   });
 });
-
-
-

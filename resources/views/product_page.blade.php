@@ -57,9 +57,9 @@
           <img class="thumbnail" src="{{ asset('product-image/' . $product->image) }}"
           alt="Thumbnail {{ $loop->index + 1 }}"
           onclick="updateProductDetails('{{ $product->image }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->price }}', '{{ $product->subtitle }}')">
-          @endforeach
+        @endforeach
             </div>
-            
+
           </div>
 
 
@@ -232,7 +232,7 @@
 
               <div class="rectangle-parent4">
                 <div class="frame-child15">
-                  <!-- Optional: Add styling or content for this element -->
+                
                 </div>
                 <div class="input-wrapper">
                   <button class="decrement-button"><b class="input">-</b></button>
@@ -454,18 +454,19 @@
   </div> -->
   <div class="modal fade" id="Product_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class=" modal-dialog modal-xl row d-flex justify-content-center" style="z-index: 20">
-      <div class="modal-content col-sm-12 col-md-12 col-lg-8" style="margin-top: 150px; margin-left: 150px; z-index: 20">
-        
+      <div class="modal-content col-sm-12 col-md-12 col-lg-8"
+        style="margin-top: 150px; margin-left: 150px; z-index: 20">
+
         <div class="modal-body">
-        <section class="product-image-parent">
+          <section class="product-image-parent">
             <img class="product-image-icon" loading="lazy" alt="" src="{{ asset('assets/image/R6.svg') }}" />
 
             <div class="product-info">
               <div class="info-details">
-                
+
                 <div class="x-wrapper">
-                <button   data-bs-dismiss="modal" aria-label="Close"> 
-                  <img class="x-icon" loading="lazy" alt="" src="{{ asset('assets/image/X.svg') }}" />
+                  <button data-bs-dismiss="modal" aria-label="Close">
+                    <img class="x-icon" loading="lazy" alt="" src="{{ asset('assets/image/X.svg') }}" />
                   </button>
                 </div>
                 <h3 class="embrace-sideboard1">Embrace Sideboard</h3>
@@ -488,7 +489,7 @@
                     </div>
                     <div class="rectangle-parent4">
                       <div class="frame-child15">
-                      
+
                       </div>
                       <div class="input-wrapper">
                         <button class="decrement-button"><b class="input">-</b></button>
@@ -509,24 +510,20 @@
                 <div class="frame-child16"></div>
                 <div class="cart-label" id="price-label">$268.35</div>
                 <div class="add-button">
-                  <div class="add-to-cart">Add To Cart</div>
+                  <div class="add-to-cart">Buy Now</div>
                 </div>
               </div>
-              <div class="secondary-button">
-                <div class="button-icon-parent">
-                  <div class="button-icon">$357.8</div>
-                  <div class="buy-now-container">
-                    <div class="buy-now1">Buy Now</div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </section>
         </div>
-        
-       
+
+
       </div>
     </div>
+    <script>
+      
+    </script>
   </div>
   <!-- <div class="modal" id="Modal" >
           <section class="product-image-parent">
@@ -595,19 +592,19 @@
             </div>
           </section>
         </div> -->
-        <script src="{{ asset('assets/js/product_page.js') }}"></script>
-<script>
-              function updateProductDetails(image, name, description, price, subtitle) {
-                // Update large image
-                document.getElementById('largeImage').src = '{{ asset('product-image') }}/' + image;
+  <script src="{{ asset('assets/js/product_page.js') }}"></script>
+  <script>
+    function updateProductDetails(image, name, description, price, subtitle) {
+      // Update large image
+      document.getElementById('largeImage').src = '{{ asset('product-image') }}/' + image;
 
-                // Update product details
-                document.getElementById('productName').innerText = name;
-                document.getElementById('productDescription').innerText = description;
-                document.getElementById('productPrice').innerText = price;
-                document.getElementById('productSubtitle').innerText = subtitle;
-              }
-            </script>
+      // Update product details
+      document.getElementById('productName').innerText = name;
+      document.getElementById('productDescription').innerText = description;
+      document.getElementById('productPrice').innerText = price;
+      document.getElementById('productSubtitle').innerText = subtitle;
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
