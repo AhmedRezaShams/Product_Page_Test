@@ -428,26 +428,6 @@
   </div>
 
   <script src="{{ asset('assets/js/product_page.js') }}"></script>
-
-  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class=" modal-dialog modal-xl row d-flex justify-content-center" style="z-index: 20">
-      <div class="modal-content col-sm-12 col-md-12 col-lg-8" style="margin-top: 150px; z-index: 20">
-        <div class="text-center modal-header">
-          <h3 class="text-center modal-title" id="exampleModalLabel" style="color: #1E0F82">Online Addmission Form Link
-          </h3>
-          {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-        </div>
-        <div class="modal-body">
-          <h1>product cart modal</h1>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
-        </div>
-        </form>
-      </div>
-    </div>
-  </div> -->
   <div class="modal fade" id="Product_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class=" modal-dialog modal-xl row d-flex justify-content-center" style="z-index: 20">
       <div class="modal-content col-sm-12 col-md-12 col-lg-8"
@@ -521,80 +501,12 @@
       
     </script>
   </div>
-  <!-- <div class="modal" id="Modal" >
-          <section class="product-image-parent">
-            <img class="product-image-icon" loading="lazy" alt="" src="{{ asset('assets/image/R6.svg') }}" />
-
-            <div class="product-info">
-              <div class="info-details">
-                
-                <div class="x-wrapper">
-                <button  class="x-icon" data-bs-dismiss="modal">
-                  <img class="x-icon" loading="lazy" alt="" src="{{ asset('assets/image/X.svg') }}" />
-                  </button>
-                </div>
-                <h3 class="embrace-sideboard1">Embrace Sideboard</h3>
-                <div class="designer-info">
-                  <div class="designer-details">
-                    <div class="studio-details">
-                      <div class="studio-name">
-                        <a class="teixeira-design-studio1">Teixeira Design Studio</a>
-                        <div class="size-info">
-                          <div class="size-details">
-                            <div class="size-icon"></div>
-                            <div class="size-details-inner">
-                              <div class="medium-wrapper">
-                                <a class="medium">Medium</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rectangle-parent4">
-                      <div class="frame-child15">
-                    
-                      </div>
-                      <div class="input-wrapper">
-                        <button class="decrement-button"><b class="input">-</b></button>
-                      </div>
-                      <b class="quantity-label">3</b>
-                      <div class="small-size-inner">
-                        <button class="increment-button"><b class="b">+</b></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="actions">
-            <div class="buttons">
-              <div class="rectangle-parent5" id="add-to-cart-button">
-                <div class="frame-child16"></div>
-                <div class="cart-label" id="price-label">$268.35</div>
-                <div class="add-button">
-                  <div class="add-to-cart">Add To Cart</div>
-                </div>
-              </div>
-              <div class="secondary-button">
-                <div class="button-icon-parent">
-                  <div class="button-icon">$357.8</div>
-                  <div class="buy-now-container">
-                    <div class="buy-now1">Buy Now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div> -->
+ 
   <script src="{{ asset('assets/js/product_page.js') }}"></script>
   <script>
      function updateProductDetails(image, name, description, price, subtitle, benifits, details) {
-      // Update large image
+      
       document.getElementById('largeImage').src = '{{ asset('product-image') }}/' + image;
-
-      // Update product details
       document.getElementById('product-name').innerText = name;
       document.getElementById('productDescription').innerText = description;
       document.getElementById('productPrice').innerText = price;
