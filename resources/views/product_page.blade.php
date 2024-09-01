@@ -53,11 +53,13 @@
               <img id="largeImage" src="{{ asset('product-image/' . $products->first()->image) }}" alt="Large Image">
             </div>
             <div class="carousel-thumbnails">
-              @foreach ($products as $product)
-          <img class="thumbnail" src="{{ asset('product-image/' . $product->image) }}"
+              @foreach ($products->take(4)  as $product)
+          <img class="thumbnail" src="{{ asset('product-image/'. $product->image) }}"
           alt="Thumbnail {{ $loop->index + 1 }}"
-          onclick="updateProductDetails('{{ $product->image }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->price }}', '{{ $product->subtitle }}')">
+          onclick="updateProductDetails('{{ $product->image }}', '{{ $product->name }}', '{{ $product->description }}', '{{ $product->price }}', '{{ $product->subtitle }}','{{$product->benefits}}','{{ $product->details }}')">
+         
         @endforeach
+        
             </div>
 
           </div>
@@ -113,14 +115,14 @@
             </div>
 
             <div class="product-title">
-              <h2 class="embrace-sideboard">{{ $product->name }}</h2>
-              <div class="teixeira-design-studio">Teixeira Design Studio</div>
+              <h2 class="embrace-sideboard"  id="product-name">{{$product->name }}</h2>
+              <div class="teixeira-design-studio" id="productSubtitle">{{ $product->subtitle}}</div>
             </div>
             <div class="frame-inner"></div>
             <div class="rating-container-wrapper">
               <div class="rating-container">
                 <div class="rating-stars">
-                  <b class="stars">$71.56</b>
+                  <b class="stars" id="productPrice">${{ $products->first()->price }}</b>
                 </div>
                 <div class="recommendation">
                   <div class="review-count-parent">
@@ -237,7 +239,7 @@
                 <div class="input-wrapper">
                   <button class="decrement-button"><b class="input">-</b></button>
                 </div>
-                <b class="quantity-label">3</b>
+                <b class="quantity-label">0</b>
                 <div class="small-size-inner">
                   <button class="increment-button"><b class="b">+</b></button>
                 </div>
@@ -246,7 +248,7 @@
 
               <div class="rectangle-parent5" id="add-to-cart-button">
                 <div class="frame-child16"></div>
-                <div class="cart-label" id="price-label">$268.35</div>
+                <div class="cart-label" id="price-label">${{ $products->first()->price }}</div>
                 <div class="add-button">
                   <div class="add-to-cart">Add To Cart</div>
                 </div>
@@ -286,25 +288,19 @@
         </div>
         <div class="product-description-parent">
           <h3 class="product-description">Product Description</h3>
-          <div class="when-its-colder">
-            When it's colder than the far side of the moon and spitting rain
-            too, you've still got to look good. From water-repellent leather
-            to a rugged outsole, the Lunar Force 1 adapts AF-1 style, so you
-            can keep your flame burning when the weather hits. Metal lace
-            hardware and extended tongue bring mountain boot toughness, while
-            the star-studded toe design gives your look the edge
+          <div class="when-its-colder" id="productDescription">
+          {{ $products->first()->description }}
           </div>
         </div>
         <div class="more-details">
-          <h3 class="benefits">Benefits</h3>
+          <h3 class="benefits">Benifits</h3>
           <div class="benefits-list">
             <div class="benefit-items">
               <div class="check-icon-wrapper">
                 <img class="check-icon" loading="lazy" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
-              <div class="durable-leather-is">
-                Durable leather is easily cleanable so you can keep your look
-                fresh.
+              <div class="durable-leather-is" id="product-benifits" >
+              {{ $products->first()->benefits }}
               </div>
             </div>
             <div class="benefit-items">
@@ -377,8 +373,8 @@
               <div class="check-icon-wrapper">
                 <img class="check-icon" alt="" src="{{ asset('assets/image/check-icon.svg') }}" />
               </div>
-              <div class="not-intended-for">
-                Not intended for use as Personal Protective Equipment (PPE)
+              <div class="not-intended-for" id="product-details">
+              {{ $products->first()->details }}
               </div>
             </div>
             <div class="benefit-items">
@@ -594,16 +590,50 @@
         </div> -->
   <script src="{{ asset('assets/js/product_page.js') }}"></script>
   <script>
-    function updateProductDetails(image, name, description, price, subtitle) {
+     function updateProductDetails(image, name, description, price, subtitle, benifits, details) {
       // Update large image
       document.getElementById('largeImage').src = '{{ asset('product-image') }}/' + image;
 
       // Update product details
-      document.getElementById('productName').innerText = name;
+      document.getElementById('product-name').innerText = name;
       document.getElementById('productDescription').innerText = description;
       document.getElementById('productPrice').innerText = price;
       document.getElementById('productSubtitle').innerText = subtitle;
+      document.getElementById('product-benifits').innerText = benifits;
+      document.getElementById('product-details').innerText = details;
+     
+      updatePriceLabel(price);
+
+
     }
+    function updatePriceLabel(basePrice) {
+    const quantity = parseInt(document.querySelector('.quantity-label').textContent, 10) || 1; // Default to 1 if quantity not set
+    const priceLabel = document.getElementById('price-label');
+    const finalPrice = (basePrice * quantity) + (basePrice * quantity * 0.25) ; // Adjust calculation as needed
+    priceLabel.textContent = `$${finalPrice.toFixed(2)}`;
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // Reference to the price label and add to cart button
+    const priceLabel = document.getElementById('price-label');
+    const addToCartButton = document.getElementById('add-to-cart-button');
+    const quantityLabel = document.querySelector('.quantity-label');
+
+    // Initial price (set this to 0 or the price of the initially selected product)
+    let price = 0;
+
+    // Event listener for the button to change the price dynamically
+    addToCartButton.addEventListener('click', () => {
+        // Example: Increase price by $10 on each click (not sure if needed in your use case)
+        updatePriceLabel(price + 10);
+    });
+
+    // Event listener for quantity change
+    quantityLabel.addEventListener('DOMSubtreeModified', function() {
+        // Calculate new price based on quantity and current product price
+        updatePriceLabel(parseFloat(document.getElementById('productPrice').innerText));
+    });
+});
+  </script>
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

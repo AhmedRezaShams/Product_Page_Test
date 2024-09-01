@@ -36,33 +36,33 @@ function updateQuantity(amount) {
 decrementButton.addEventListener('click', () => updateQuantity(-1));
 incrementButton.addEventListener('click', () => updateQuantity(1));
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Reference to the price label and add to cart button
-  const priceLabel = document.getElementById('price-label');
-  const addToCartButton = document.getElementById('add-to-cart-button');
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Reference to the price label and add to cart button
+//   const priceLabel = document.getElementById('price-label');
+//   const addToCartButton = document.getElementById('add-to-cart-button');
 
-  // Initial price
-  let price = 268.35;
+//   // Initial price
+//   let price = 0;
 
-  // Function to update the price
-  function updatePrice(newPrice) {
-      price = newPrice;
-      priceLabel.textContent = `$${price.toFixed(2)}`;
-  }
+//   // Function to update the price
+//   function updatePrice(newPrice) {
+//       price = newPrice*0.25;
+//       priceLabel.textContent = `$${price.toFixed(2)}`;
+//   }
 
-  // Event listener for the button to change the price dynamically
-  addToCartButton.addEventListener('click', () => {
-      // Example: Increase price by $10 on each click
-      updatePrice(price + 10);
-  });
+//   // Event listener for the button to change the price dynamically
+//   addToCartButton.addEventListener('click', () => {
+//       // Example: Increase price by $10 on each click
+//       updatePrice(price + 10);
+//   });
 
-  // Event listener for quantity change
-  quantityLabel.addEventListener('DOMSubtreeModified', function() {
-      // Calculate new price based on quantity
-      const newPrice = 268.35 * quantity;
-      updatePrice(newPrice);
-  });
-});
+//   // Event listener for quantity change
+//   quantityLabel.addEventListener('DOMSubtreeModified', function() {
+//       // Calculate new price based on quantity
+//       const newPrice = 268.35 * quantity;
+//       updatePrice(newPrice);
+//   });
+// });
 
 $(document).ready(function () {
   $('.btn').on('click', function(e) {
