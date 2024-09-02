@@ -1,52 +1,42 @@
-
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CartItem;
+use App\Models\User;
 
 class CartController extends Controller
 {
-    public function show($id)
+    public function store(Request $request)
     {
-        $product = Product::findOrFail($id);
-        return view('product.show', compact('product'));
-    }
-
-    public function addToCart(Request $request)
-    {
-        $cartItem = Cart::create([
-            'product_id' => $request->product_id,
-            'quantity' => $request->quantity,
-            'color' => $request->color,
-            'size' => $request->size,
-            'price' => $request->price,
+        $validatedData = $request->validate([
+            'product_name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric|min:1',
+            'size' => 'required|string',
+            'color' => 'required|string',
         ]);
 
-        return response()->json(['cartItem' => $cartItem]);
-    }
+        $item = CartItem::where('user_id', auth()->id())
+            ->where('product_name', $validatedData['product_name'])
+            ->first();
 
-    public function updateCart(Request $request, $id)
-    {
-        $cartItem = Cart::findOrFail($id);
-        $cartItem->update([
-            'quantity' => $request->quantity,
-            'price' => $request->price,
-        ]);
+        if (!$item) {
+            $item = CartItem::create([
+                'user_id' => auth()->id(),
+                'product_name' => $validatedData['product_name'],
+                'price' => $validatedData['price'],
+                'quantity' => $validatedData['quantity'],
+                'size' => $validatedData['size'],
+                'color' => $validatedData['color']
+            ]);
+        } else {
+            $item->update([
+                'quantity' => $item->quantity + $validatedData['quantity']
+            ]);
+        }
 
-        return response()->json(['cartItem' => $cartItem]);
-    }
-
-    public function showCart()
-    {
-        $cartItems = Cart::all();
-        return view('cart.show', compact('cartItems'));
-    }
-
-    public function checkout()
-    {
-        // Save cart items to database or process the order
-        Cart::truncate(); // Clear the cart
-        return redirect()->route('products.index')->with('success', 'Order placed successfully!');
+        return response()->json($item);
     }
 }
-
